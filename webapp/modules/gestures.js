@@ -31,7 +31,7 @@ const CONFIG = {
   indexHighDelta: 0.15,
   middleRelaxDelta: 0.05,
   mouthOpenThreshold: 0.02,
-  smileAspectThreshold: 0.32,
+  smileAspectThreshold: 0.25,
   handsOnHeadY: 0.55,
   handsPoseMargin: 0.02,
   thumbUpDelta: 0.08,
@@ -141,11 +141,7 @@ function detectThumbsUp(hands) {
 }
 
 function detectSmile(mouthInfo) {
-  if (
-    mouthInfo &&
-    mouthInfo.aspectRatio > CONFIG.smileAspectThreshold &&
-    (mouthInfo.cornersUp || mouthInfo.height > CONFIG.mouthOpenThreshold * 2)
-  ) {
+  if (mouthInfo && mouthInfo.aspectRatio > CONFIG.smileAspectThreshold) {
     return STATES.SMILE;
   }
   return null;

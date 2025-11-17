@@ -27,7 +27,7 @@ import { setupUI } from './modules/ui.js';
       ui.update(results);
     });
 
-    statusEl.textContent = 'Ready! Perform gestures to change the meme.';
+    statusEl.textContent = 'Ready! NGGA just do Monkey actions.';
 
     const camera = new Camera(videoEl, {
       onFrame: async () => {
