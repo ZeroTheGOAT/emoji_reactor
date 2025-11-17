@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emoji Reactor Web</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/holistic/holistic.js"></script>
+  </head>
+  <body>
+    <main id="app">
+      <header>
+        <h1>Emoji Reactor</h1>
+        <p class="status-text">Loading detectors…</p>
+        <p class="hint">
+          Keeps all gestures from the desktop app. On phones the meme output sits above the
+          selfie feed; on desktops it sits beside it.
+        </p>
+      </header>
+      <section class="panes">
+        <div class="pane output-pane">
+          <div class="display-wrapper">
+            <img id="output-image" src="../images/plain.png" alt="Emoji output" />
+          </div>
+          <p class="state-label">State: <span id="state-name">Idle</span></p>
+        </div>
+        <div class="pane camera-pane">
+          <video id="camera" playsinline autoplay muted></video>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
