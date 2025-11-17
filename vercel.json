@@ -1,7 +1,16 @@
 {
-  "project": {
-    "rootDirectory": "webapp"
-  },
-  "framework": null
+  "version": 2,
+  "builds": [
+    {
+      "src": "webapp/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "webapp/$1"
+    }
+  ]
 }
 
